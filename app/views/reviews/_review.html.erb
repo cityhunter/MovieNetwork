@@ -1,0 +1,42 @@
+   <p>
+    <b>Author:</b>
+    <%= review.author %>
+  </p>
+ 
+  <p>
+    <b>Content:</b>
+    <%= review.content %>
+  </p>
+
+  <p>
+    <b>Rank:</b>
+    <%= review.rank %>
+  </p>
+
+  <p>
+  <%= link_to 'Destroy Review', [review.movie, review],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+
+  <p>
+   <h2>Comments</h2>
+    <%= render review.comments%>
+
+   <h2>Add a comment:</h2>
+   <%= form_for([review, review.comments.build]) do |f| %>
+    <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+  </p>
+
+</p>

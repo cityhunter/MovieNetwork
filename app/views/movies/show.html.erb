@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<p>
+<%= image_tag(@movie.image_url, class: 'list_image') %>
+</p>
+<p>
+  <b>Title:</b>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <b>Genres:</b>
+  <%= @movie.genres %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @movie.duration %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @movie.country %>
+</p>
+
+<p>
+<h2>Reviews</h2>
+<%= render @movie.reviews%>
+</p>
+
+<h2>Add a review:</h2>
+<%= render "reviews/form" %>
+ <br />
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

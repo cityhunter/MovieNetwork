@@ -1,0 +1,32 @@
+<h1>Listing movies</h1>
+
+<table>
+  <tr>
+    <th>Image url</th>
+    <th>Title</th>
+    <th>Genres</th>
+    <th>Duration</th>
+    <th>Country</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @movies.each do |movie| %>
+  <tr>
+    <td>
+     <%= image_tag(movie.image_url, class: 'list_image') %>
+    </td>
+    <td><%= movie.title %></td>
+    <td><%= movie.genres %></td>
+    <td><%= movie.duration %></td>
+    <td><%= movie.country %></td>
+    <td><%= link_to 'Show', movie %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movie', new_movie_path %>
