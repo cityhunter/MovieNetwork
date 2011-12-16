@@ -1,8 +1,9 @@
+   <div class = "row">
+   <div class = "span16">
    <p>
     <b>Author:</b>
     <%= review.author %>
   </p>
- 
   <p>
     <b>Content:</b>
     <%= review.content %>
@@ -14,18 +15,16 @@
   </p>
 
   <p>
-
-  <% if current_user.try(:admin?) %>
   <%= link_to 'Destroy Review', [review.movie, review],
                :confirm => 'Are you sure?',
                :method => :delete %>
-  <% end %>
-
+   </div>            
+  </div>
   <p>
-   <h2>Comments</h2>
+   <h3>Comments</h3>
     <%= render review.comments%>
 
-   <h2>Add a comment:</h2>
+   <h3>Add a comment:</h3>
    <%= form_for([review, review.comments.build]) do |f| %>
     <div class="field">
     <%= f.label :author %><br />
