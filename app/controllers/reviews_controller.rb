@@ -55,7 +55,10 @@ class ReviewsController < ApplicationController
       #end
     #end
   end
-
+  def getMovieName
+    @movie = Movie.find(params[:movie_id])
+    @movie.title
+  end
   # PUT /reviews/1
   # PUT /reviews/1.json
   def update

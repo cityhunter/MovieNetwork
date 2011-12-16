@@ -1,13 +1,10 @@
-<h1>Listing reviews</h1>
+<h1>Reviews</h1>
 
 <table>
   <tr>
     <th>Author</th>
     <th>Content</th>
     <th>Rank</th>
-    <th>Movie</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -16,11 +13,7 @@
     <td><%= review.author %></td>
     <td><%= review.content %></td>
     <td><%= review.rank %></td>
-    <td><%= review.movie %></td>
     <td><%= link_to 'Show', review %></td>
-    <td><%= link_to 'Edit', edit_review_path(review) %></td>
-    <td><%= link_to 'Destroy', review, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
 <% end %>
 </table>
 

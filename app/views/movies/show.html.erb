@@ -1,34 +1,42 @@
-<p id="notice"><%= notice %></p>
-<p>
-<%= image_tag(@movie.image_url, class: 'list_image') %>
-</p>
-<p>
+<h1><%= @movie.title %></h1>
+<div class = "hero-unit">
+<div class = "row">
+ <div class = "span4">
+
+  <p>
+	<%= image_tag(@movie.image_url, class: 'list_image') %>
+  </p>
+
+</div>
+<div class = "span10">
+ <p>
   <b>Title:</b>
   <%= @movie.title %>
-</p>
+ </p>
 
-<p>
+ <p>
   <b>Genres:</b>
   <%= @movie.genres %>
-</p>
+ </p>
 
-<p>
+ <p>
   <b>Duration:</b>
   <%= @movie.duration %>
-</p>
+ </p>
 
-<p>
+ <p>
   <b>Country:</b>
   <%= @movie.country %>
-</p>
-
-<p>
-<h2>Reviews</h2>
-<%= render @movie.reviews%>
-</p>
-
-<h2>Add a review:</h2>
-<%= render "reviews/form" %>
+ </p>
+ </div>
+</div>
+</div>
+ <p> 
+  <h2>Reviews</h2>
+  <%= render @movie.reviews%>
+  </p>
+  
+  <h2>Add a review:</h2>
+   <%= render "reviews/form" %>
  <br />
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
