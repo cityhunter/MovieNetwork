@@ -15,9 +15,11 @@
   </p>
 
   <p>
+  <% if current_user.try(:admin?) %>
   <%= link_to 'Destroy Review', [review.movie, review],
                :confirm => 'Are you sure?',
                :method => :delete %>
+  <% end %>
    </div>            
   </div>
   <p>
