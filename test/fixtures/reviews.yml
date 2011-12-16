@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  author: MyString
+  content: MyText
+  rank: 1
+  movie: 
+
+two:
+  author: MyString
+  content: MyText
+  rank: 1
+  movie: 
