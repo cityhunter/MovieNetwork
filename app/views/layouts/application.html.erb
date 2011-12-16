@@ -62,17 +62,19 @@
             <li class="active"><a href="/movies">Movies</a></li>
             <li><a href="/reviews">Reviews</a></li>
           </ul>
-        </div>
-      </div>
-    </div>
-<div class = "container">
- <div class = "content">
-  <% if user_signed_in? %>
+          <form action="" class="pull-right">
+            <% if user_signed_in? %>
     Signed in as <%= current_user.email%>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
   <% end %>
+          </form>
+        </div>
+      </div>
+    </div>
+<div class = "container">
+ <div class = "content">
   <%= yield %>
  </div>
 </div>
