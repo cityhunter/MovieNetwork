@@ -21,9 +21,11 @@
     <td><%= movie.country %></td>
     <td><%= link_to 'Show', movie %></td>
 
-    <% if current_user.try(:admin?) %>
-    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-    <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
+    <% if can? :update, @movie %>
+     <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+    <%end%>
+    <% if can? :destroy, @movie%> 
+     <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
     <% end %>
 
   </tr>
@@ -32,6 +34,6 @@
 
 <br />
 
-<% if current_user.try(:admin?) %>
-<%= link_to 'New Movie', new_movie_path %>
+<% if can? :create, @movie%>
+ <%= link_to 'New Movie', new_movie_path %>
 <% end %>

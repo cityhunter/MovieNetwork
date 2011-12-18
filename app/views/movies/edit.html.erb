@@ -1,16 +1,8 @@
 <h1>Editing movie</h1>
 
-<% if current_user.try(:admin?) %>
 
 <%= render 'form' %>
 
-<% else %>
-
-<div>
- You need admin rights to do this!
-</div>
-
-<% end %>
 
 <%= link_to 'Show', @movie %> |
 <%= link_to 'Back', movies_path %>

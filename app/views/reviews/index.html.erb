@@ -17,9 +17,13 @@
     <td><%= review.content %></td>
     <td><%= review.rank %></td>
     <td><%= review.movie %></td>
-    <td><%= link_to 'Show', review %></td>
-    <td><%= link_to 'Edit', edit_review_path(review) %></td>
-    <td><%= link_to 'Destroy', review, confirm: 'Are you sure?', method: :delete %></td>
+      <td><%= link_to 'Show', review %></td>
+    <% if can? :edit, @movie%>  
+      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+    <% end %>  
+    <% if can? :destroy, @movie%>
+      <td><%= link_to 'Destroy', review, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

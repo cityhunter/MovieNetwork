@@ -17,6 +17,7 @@
 
 <h2>Comments</h2>
 <%= render @review.comments%>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
+<% if can? :edit, @movie%>
+	<%= link_to 'Edit', edit_review_path(@review) %> |
+<%end%>
 <%= link_to 'Back To movies', movies_path %>
